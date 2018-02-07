@@ -5,9 +5,13 @@ fun main(args: Array<String>) {
 
     val max = max(sum1, sum2)
     val max2 = max2(sum2, sum3)
+    val max3: Int? = null
 
     println(sum1.toString() + " " + sum2 + " " + sum3)
     println("max: " + max + ", max2: " + max2)
+    println("max: $max, max2: $max2")
+    println("null: $max3")
+    println("max: ${max.triple()}")
 }
 
 fun sum(a: Int, b: Int): Int = a + b
@@ -27,5 +31,9 @@ fun max(a: Int, b: Int): Int {
 }
 
 fun max2(a: Int, b: Int) = if (a > b) a else b
+
+fun Int.triple(): Int {
+    return this * 3
+}
 
 
