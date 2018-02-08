@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
         else -> println("fail")
     }
 
-    var numberRange = 10..12
+    val numberRange = 10..12
     when (max) {
         in 1..9 -> println("This is single digit.")
         in numberRange -> println("Yes, This is 10 < num < 12!")
@@ -30,9 +30,9 @@ fun main(args: Array<String>) {
         else -> println("This number is 13 < num < 20")
     }
 
-    val string = "prefixHello"
-    val hasPrefix = when (string) {
-        is String -> string.startsWith("prefix")
+    val any: Any = "prefixHello"
+    val hasPrefix = when (any) {
+        is String -> any.startsWith("prefix")
         else -> false
     }
     println(hasPrefix)
