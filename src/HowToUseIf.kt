@@ -5,6 +5,10 @@ fun main(args: Array<String>) {
     hello2 = null // String?은 null을 쓸 수 있다.
     println("hello.length: " + hello.length)
 
+    if(hello != null) {
+        println("Hello is not null")
+    }
+
     // null일 수도 있기 때문에 length같은 NullPointerException이 뜰 수 있는 건 쓸 수 없음
     //println("hello2.length: " + hello2.length)
     hello2 = "Hello2"
@@ -16,12 +20,21 @@ fun main(args: Array<String>) {
     hello2 = null;
     println("hello2.length: " + hello2?.length ?: -1)//안전호출(?.)과 엘비스 오퍼레이터(?:)
 
+    hello2?.let {
+        //null이 아니면 이 블록을 실행
+        println("This is not null")
+    }
     //hello2!.length() 강제 호출
 
     println("getStringLength: " + getStringLength(hello))
     println("getStringLength2: " + getStringLength2(hello2))
+
     hello2 = "Hello2"
     println("getStringLength2: " + getStringLength2(hello2))
+    hello2?.let {
+        //null이 아니면 이 블록을 실행
+        println("This is not null")
+    }
 }
 
 fun getStringLength(something: Any): Int? {

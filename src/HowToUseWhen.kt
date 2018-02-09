@@ -42,10 +42,21 @@ fun main(args: Array<String>) {
         max.isEven() -> println("max is even")
         else -> println("Is this number??")
     }
+
+    println("Red is ${colorToInt("Red")}")
 }
 
 fun whenSucess(arg: Int): Int {
     return arg
+}
+
+fun colorToInt(color: String): Int {
+    return when (color) {
+        "Red" -> 0
+        "Green" -> 1
+        "Blue" -> 2
+        else -> 3
+    }
 }
 
 fun Int.isOdd(): Boolean {
