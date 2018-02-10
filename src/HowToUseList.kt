@@ -10,4 +10,9 @@ fun main(args: Array<String>) {
     array.forEach { print(it) }
     println("")
     arrayList.forEach { print(it) }
+    println("")
+
+    println(array[0])
+    println(arrayList.get(0))
+    println(arrayList[0])
 }
